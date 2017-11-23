@@ -1,0 +1,8 @@
+.graph {
+  isolation: isolate;
+}
+.graph rect,
+.graph circle,
+.graph path {
+  mix-blend-mode: multiply;
+}
