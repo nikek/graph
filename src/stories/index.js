@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf, action, linkTo } from '@storybook/react';
 import Graph from '../Graph';
-import { singleTS, singleTS2, twentyfive, fifty } from './TestData';
+import { singleTS, singleTS2, singleTS3, twentyfive, fifty } from './TestData';
 
 storiesOf('Graph - Single Time Series', module)
   .add('Pass single time series', () => [
@@ -110,27 +110,79 @@ storiesOf('Graph - Single Time Series', module)
     />
   ]);
 
-storiesOf('Graph - Multi').add('Pass two time series', () => [
-  <Graph series={[{ points: singleTS }, { points: singleTS2 }]} />,
-  <Graph
-    series={[
-      { points: singleTS, plot: 'bars' },
-      { points: singleTS2, plot: 'bars' }
-    ]}
-  />,
-  <Graph
-    series={[
-      { points: singleTS, plot: 'area' },
-      { points: singleTS2, plot: 'area' }
-    ]}
-  />,
-  <Graph
-    series={[
-      { points: singleTS, plot: 'dots' },
-      { points: singleTS2, plot: 'dots' }
-    ]}
-  />
-]);
+storiesOf('Graph - Multi')
+  .add('Pass two time series', () => [
+    <Graph series={[{ points: singleTS }, { points: singleTS2 }]} />,
+    <Graph
+      series={[
+        { points: singleTS, plot: 'bars' },
+        { points: singleTS2, plot: 'bars' }
+      ]}
+    />,
+    <Graph
+      series={[
+        { points: singleTS, plot: 'area' },
+        { points: singleTS2, plot: 'area' }
+      ]}
+    />,
+    <Graph
+      series={[
+        { points: singleTS, plot: 'dots' },
+        { points: singleTS2, plot: 'dots' }
+      ]}
+    />
+  ])
+  .add('Pass two time series mixed plots', () => [
+    <Graph series={[{ points: singleTS }, { points: singleTS2 }]} />,
+    <Graph
+      series={[
+        { points: singleTS, plot: 'line' },
+        { points: singleTS2, plot: 'bars' }
+      ]}
+    />,
+    <Graph
+      series={[
+        { points: singleTS, plot: 'dots' },
+        { points: singleTS2, plot: 'area' }
+      ]}
+    />,
+    <Graph
+      series={[
+        { points: singleTS, plot: 'bars' },
+        { points: singleTS2, plot: 'line' }
+      ]}
+    />
+  ])
+  .add('Pass three time series', () => [
+    <Graph
+      series={[
+        { points: singleTS },
+        { points: singleTS2 },
+        { points: singleTS3 }
+      ]}
+    />,
+    <Graph
+      series={[
+        { points: singleTS, plot: 'bars' },
+        { points: singleTS2, plot: 'bars' },
+        { points: singleTS3, plot: 'bars' }
+      ]}
+    />,
+    <Graph
+      series={[
+        { points: singleTS, plot: 'area' },
+        { points: singleTS2, plot: 'area' },
+        { points: singleTS3, plot: 'area' }
+      ]}
+    />,
+    <Graph
+      series={[
+        { points: singleTS, plot: 'dots' },
+        { points: singleTS2, plot: 'dots' },
+        { points: singleTS3, plot: 'dots' }
+      ]}
+    />
+  ]);
 
 storiesOf('Graph - No Data')
   .add('No props', () => <Graph />)

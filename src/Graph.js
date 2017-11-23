@@ -109,23 +109,26 @@ function getTimespanDomain(series) {
 const colorizer = (function() {
   let colorNumber = 0;
   const colorArray = [
-    '#FFCEF6',
     '#48CFAD',
     '#FC6E51',
-    '#ED5565',
     '#A0D468',
+    '#ED5565',
     '#4FC1E9',
     '#5D9CEC',
     '#AC92EC',
+    '#FFCEF6',
     '#EC87C0'
   ];
   return function(num) {
     if (typeof num === 'number') {
       colorNumber = num;
+      return;
     }
-    if (colorNumber >= colorArray.length) {
+    if (colorNumber === colorArray.length) {
       colorNumber = 0;
     }
-    return colorArray[colorNumber++];
+    const color = colorArray[colorNumber];
+    colorNumber++;
+    return color;
   };
 })();

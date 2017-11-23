@@ -32,6 +32,22 @@ export const singleTS2 = [
   { y: 3270 }
 ].map((o, i) => ({ x: startDatetime + i * 60000, y: o.y }));
 
+export const singleTS3 = [
+  { y: 297 },
+  { y: 360 },
+  { y: 216 },
+  { y: 443 },
+  { y: 2190 },
+  { y: 2845 },
+  { y: 2700 },
+  { y: 2502 },
+  { y: 1381 },
+  { y: 1243 },
+  { y: 1060 },
+  { y: 810 },
+  { y: 270 }
+].map((o, i) => ({ x: startDatetime + i * 60000, y: o.y }));
+
 const realData2 = [
   {
     currency: 'EUR',
