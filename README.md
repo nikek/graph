@@ -1,6 +1,37 @@
 # Graph
 Nicely graphing time series.
 
+## How does it work?
+
+Owned by the `Graph` component
+* Scale
+  * Dimensions - Either fixed specified or calculated depending on time series max/min x/y.  
+    `timeSpan` (Duration[relative to now]/DateSpan[absolute between two dates]) to set the x axis  
+    `valueSpan` tuple [minY, maxY] set `null` for depending on data on one
+  * Sizing -  
+    `width`  
+    `height`
+* Stacking (should be calculated outside?)  
+  Affect layout of several time series
+* Colorizer  
+  Affect color of all time series (based on integral)
+* MixBlendMode  
+  Any of the css mix blend modes 
+
+`Series`
+* `label?` - the name of the time series (*default: `null`*)
+* `color?` - A fill color string. (*default: `'#2ebd59'`*)
+* `dataType` - `'points' | 'events'`
+
+`PointSeries`
+* `points` - `[{x: timestamp, y:value}, {x: timestamp2, y:value2}]`  
+* `unit` - string that explains what unit to plot the values in. (*default: `null`*)  
+  `'milliseconds' | 'seconds' | ...`  
+* `plot?`(Points) - `'bars' | 'area' | 'line' | 'dots'` (*default: `'line'`*)
+
+`EventSeries`
+* `events` - `[{x: timestamp, content: {label: 'Deployment', link:'http://..'}]`
+
 ## Install
 ```
 npm i @nikek/graph

@@ -3,7 +3,7 @@ import React from 'react';
 export default function Dots(props) {
   return (
     <g>
-      {props.data.map((d, i) => (
+      {props.points.map((d, i) => (
         <circle
           key={i}
           r="3"

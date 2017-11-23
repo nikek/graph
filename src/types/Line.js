@@ -8,9 +8,9 @@ export default function Line(props) {
 
   return (
     <path
-      d={line(props.data)}
+      d={line(props.points)}
       strokeWidth="1.3"
-      stroke={props.color}
+      stroke={props.color || 'black'}
       fill="none"
     />
   );

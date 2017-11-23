@@ -7,5 +7,5 @@ export default function Area(props) {
     .y0(props.yScale.range()[0])
     .y1(d => props.yScale(d.y));
 
-  return <path d={area(props.data)} fill={props.color} />;
+  return <path d={area(props.points)} fill={props.color} />;
 }

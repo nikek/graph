@@ -1,70 +1,20 @@
-const realData = [
-  {
-    currency: 'EUR',
-    amount: 1597,
-    week: '2017 w01'
-  },
-  {
-    currency: 'EUR',
-    amount: 1660,
-    week: '2017 w02'
-  },
-  {
-    currency: 'EUR',
-    amount: 1663,
-    week: '2017 w03'
-  },
-  {
-    currency: 'EUR',
-    amount: 1640,
-    week: '2017 w04'
-  },
-  {
-    currency: 'EUR',
-    amount: 2190,
-    week: '2017 w05'
-  },
-  {
-    currency: 'EUR',
-    amount: 2342,
-    week: '2017 w06'
-  },
-  {
-    currency: 'EUR',
-    amount: 2370,
-    week: '2017 w07'
-  },
-  {
-    currency: 'EUR',
-    amount: 2554,
-    week: '2017 w08'
-  },
-  {
-    currency: 'EUR',
-    amount: 2378,
-    week: '2017 w09'
-  },
-  {
-    currency: 'EUR',
-    amount: 2243,
-    week: '2017 w10'
-  },
-  {
-    currency: 'EUR',
-    amount: 2356,
-    week: '2017 w11'
-  },
-  {
-    currency: 'EUR',
-    amount: 2481,
-    week: '2017 w12'
-  },
-  {
-    currency: 'EUR',
-    amount: 1027,
-    week: '2017 w13'
-  }
-].map((o, i) => ({ x: i, y: o.amount }));
+const startDatetime = 1511429647870;
+
+export const singleTS = [
+  { y: 1597 },
+  { y: 1660 },
+  { y: 1663 },
+  { y: 1640 },
+  { y: 2190 },
+  { y: 2342 },
+  { y: 2370 },
+  { y: 2554 },
+  { y: 2378 },
+  { y: 2243 },
+  { y: 2356 },
+  { y: 2481 },
+  { y: 1027 }
+].map((o, i) => ({ x: startDatetime + i * 60000, y: o.y }));
 
 const realData2 = [
   {
@@ -134,7 +84,7 @@ const realData2 = [
   }
 ].map((o, i) => ({ x: i, y: o.amount }));
 
-const twentyfive = [
+export const twentyfive = [
   { x: '0', y: 50 },
   { x: '1', y: 80 },
   { x: '2', y: 88 },
@@ -162,7 +112,7 @@ const twentyfive = [
   { x: '24', y: 59 }
 ];
 
-const fifty = [
+export const fifty = [
   { x: '0', y: 16 },
   { x: '1', y: 39 },
   { x: '2', y: 64 },
@@ -214,10 +164,3 @@ const fifty = [
   { x: '48', y: 42 },
   { x: '49', y: 7 }
 ];
-
-export default {
-  realData,
-  realData2,
-  twentyfive,
-  fifty
-};
