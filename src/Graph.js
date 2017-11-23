@@ -59,13 +59,14 @@ export default class Graph extends React.Component {
         <g style={{ transform: `translate(${p.paddingX}px,${p.paddingY}px)` }}>
           {p.series.map(s => {
             if (s.points) {
-              return types[s.plot || 'line']({
-                ...s,
-                width: p.width,
-                height: p.height,
-                yScale: p.yScale,
-                xScale: p.xScale
-              });
+              return types[s.plot || 'line'](
+                Object.assign({}, s, {
+                  width: p.width,
+                  height: p.height,
+                  yScale: p.yScale,
+                  xScale: p.xScale
+                })
+              );
             }
           })}
 
